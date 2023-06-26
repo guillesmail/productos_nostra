@@ -135,13 +135,11 @@ html{
 }
      .filtros_aplicados p{
         padding-top: 1rem;
-        /* border: solid 1px red; */
-      
+    
     }
 
     .ordenar_por{
-       /*  width: 30%; */ 
-        /* margin: 1rem; */
+
         padding-top: 1rem;
        
 
@@ -149,37 +147,59 @@ html{
 
 
 .contenedor_productos{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 
+        repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        );
+   
+    align-content: flex-end;
+ 
    
 }
 
-.contenedor_producto{
-    margin: 0.8rem;
+.caja_producto{
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 250px;
+
 
 }
-
-.contenedor_producto img{
-    width: 180px;
-    border-radius: 4%;
-
-}
-
-.detalle_producto {
-    overflow: auto; /* Para evitar que los elementos floten fuera del contenedor */
-    padding: 0.5rem 0.2rem;
-
-}
-
-.float-left {
-    float: left;
+.caja_img{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
-.float-rigth{
-    float: right;
+.caja_img img {
+    max-width: 100%; /* La imagen se ajustará al ancho máximo permitido */
+    max-height: 100%; /* La imagen se ajustará a la altura máxima permitida */
+    object-fit: contain; /* Mantiene las proporciones y ajusta la imagen dentro del contenedor */
+    border-radius: 5%;
+  }
+
+.detalle_producto {
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+    display: flex;
+  justify-content: space-between;
+  
+}
+
+.texto_producto{
+    width: 100%;
+    height: 10%;
+    padding: 10px;
 
 }
 
@@ -195,6 +215,37 @@ html{
     border: solid var(--grisIcon);
      
  }
+
+/* mostrar productos paginacion ----------------- */
+  
+  #paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  #paginacion button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5%;
+    border: solid 0.5px var(--grisIcon);
+    background-color: transparent;
+
+
+  }
+  
+  #paginacion button:hover {
+    background-color: #ccc;
+  }
+  
+  #paginacion button.active {
+    background-color: #666;
+    color: #fff;
+  }
+/* fin mostrar productos paginacion ------------------ */
+
 
 /*  FIN PAGINA PRODUCTOS --------- */
 
